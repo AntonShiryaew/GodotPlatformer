@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbge7v3jk8a4n"]
+
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="1_37e8o"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="2_2cpdf"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="2_gibm8"]
+[ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/jump_platform.tscn" id="3_dljig"]
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="4_dfu27"]
+
+[node name="TestScene" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D2" parent="." instance=ExtResource("2_2cpdf")]
+position = Vector2(394, 308)
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_37e8o")]
+position = Vector2(-420, 44)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="plat" parent="." groups=["loading_platform"] instance=ExtResource("2_gibm8")]
+position = Vector2(-421, 125)
+
+[node name="jump" parent="." instance=ExtResource("3_dljig")]
+position = Vector2(-43, 219)
+
+[node name="StaticBody2D" parent="." groups=["loading_platform"] instance=ExtResource("2_gibm8")]
+position = Vector2(360, 404)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_gibm8")]
+position = Vector2(-672, -418)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D3" parent="." groups=["loading_platform"] instance=ExtResource("2_gibm8")]
+position = Vector2(-892, 358)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_dljig")]
+position = Vector2(936, 524)
+
+[node name="Area2D" parent="." instance=ExtResource("4_dfu27")]
+position = Vector2(-624, 634)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

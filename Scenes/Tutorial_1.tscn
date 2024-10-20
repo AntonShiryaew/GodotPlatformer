@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvmo28c804d81"]
+
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="1_nr445"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="2_yfulg"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_i2c6a"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="4_kdwl3"]
+
+[node name="Tutorial1" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Area2D" parent="." instance=ExtResource("1_nr445")]
+position = Vector2(-266, 424)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_yfulg")]
+position = Vector2(-406, 76)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_yfulg")]
+position = Vector2(376, 76)
+
+[node name="Area2D2" parent="." instance=ExtResource("3_i2c6a")]
+position = Vector2(426, -20)
+scale = Vector2(0.6, 0.6)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_kdwl3")]
+position = Vector2(-408, 2)

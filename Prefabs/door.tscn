@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw6l1qooio0va"]
+
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_dav67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri54d"]
+size = Vector2(200, 250)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c6mmo"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -20, 0)
+emission_shape_scale = Vector3(1, 1, 11)
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 3.0
+scale_max = 8.0
+hue_variation_min = -0.05
+hue_variation_max = -2.23517e-08
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_speed_random = 1.46
+turbulence_influence_min = 0.131
+turbulence_influence_max = 0.246
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_dav67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ri54d")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_c6mmo")
+trail_sections = 10
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
