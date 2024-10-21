@@ -7,8 +7,6 @@ var player_in_end
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
-#Label
-
 func _ready() -> void:
 	player_in_end = false
 

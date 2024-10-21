@@ -5,19 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_i2c6a"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="4_kdwl3"]
 
-[node name="Tutorial1" type="Node2D"]
+[node name="Tutorial1" type="Node2D" groups=["loading_platform"]]
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 
 [node name="Area2D" parent="." instance=ExtResource("1_nr445")]
-position = Vector2(-266, 424)
+position = Vector2(-66, 714)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_yfulg")]
+[node name="StaticBody2D" parent="." groups=["loading_platform"] instance=ExtResource("2_yfulg")]
 position = Vector2(-406, 76)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_yfulg")]
+[node name="StaticBody2D2" parent="." groups=["loading_platform"] instance=ExtResource("2_yfulg")]
 position = Vector2(376, 76)
 
 [node name="Area2D2" parent="." instance=ExtResource("3_i2c6a")]
