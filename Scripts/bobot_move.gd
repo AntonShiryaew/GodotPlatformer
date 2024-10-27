@@ -1,20 +1,16 @@
 extends CharacterBody2D
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 const SPEED = 300.
 const JUMP_FORCE = -400.
 
-var player_in_end
+var readyToDisappear = false
 
-@onready var _animated_sprite = $AnimatedSprite2D
-
-func _ready() -> void:
-	player_in_end = false
-
-#func _process(delta: float) -> void:
-	#print(String.num(velocity.y))
+signal readyToNextLevel
 
 func call_end() -> void:
-	player_in_end = true
+	readyToDisappear = true
 
 func check_collision() -> void:
 	for index in get_slide_collision_count():
@@ -23,10 +19,13 @@ func check_collision() -> void:
 			velocity.y = JUMP_FORCE * 2
 
 func _physics_process(delta: float) -> void:
-	if(player_in_end):
-		modulate.a -= 0.08
-		_animated_sprite.play("jump")
-	else:	
+	if readyToDisappear:
+		if modulate.a < 0 :
+			readyToNextLevel.emit()
+		else:
+			modulate.a -= 0.08
+			_animated_sprite.play("jump")
+	else:
 		velocity += get_gravity() * delta
 		
 		if Input.is_action_just_pressed("ui_select") and is_on_floor():

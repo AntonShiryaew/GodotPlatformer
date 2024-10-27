@@ -1,0 +1,172 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1fiyns5boq01"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScene/baseScene.tscn" id="1_s6p5h"]
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_7n4yv"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_uoeyh"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="4_bljre"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="5_68ayb"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="6_whrpf"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_a7pon"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_ari4k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ecpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pshr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m7et"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5wie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tc7o"]
+
+[node name="BaseNode" instance=ExtResource("1_s6p5h")]
+
+[node name="BaseNode2D" parent="." index="0"]
+visible = true
+position = Vector2(961, 538)
+
+[node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_7n4yv")]
+position = Vector2(-6, 744)
+
+[node name="Door" parent="BaseNode2D" index="2" instance=ExtResource("3_uoeyh")]
+position = Vector2(698, -70)
+next_scene_path = "res://Scenes/Levels/Tutorial/Tutorial2.tscn"
+
+[node name="Platform" parent="BaseNode2D" index="3" groups=["loading_platform"] instance=ExtResource("4_bljre")]
+position = Vector2(-780, 78)
+
+[node name="Platform2" parent="BaseNode2D" index="4" groups=["loading_platform"] instance=ExtResource("4_bljre")]
+position = Vector2(-476, 78)
+
+[node name="Platform3" parent="BaseNode2D" index="5" groups=["loading_platform"] instance=ExtResource("4_bljre")]
+position = Vector2(-172, 78)
+
+[node name="Platform4" parent="BaseNode2D" index="6" groups=["loading_platform"] instance=ExtResource("4_bljre")]
+position = Vector2(368, 76)
+
+[node name="Platform5" parent="BaseNode2D" index="7" groups=["loading_platform"] instance=ExtResource("4_bljre")]
+position = Vector2(672, 76)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="BaseNode2D" index="8"]
+offset_left = -610.0
+offset_top = -142.0
+offset_right = -333.0
+offset_bottom = -72.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D/VBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+text = "Прыжок"
+horizontal_alignment = 1
+script = ExtResource("6_whrpf")
+
+[node name="BaseGameButton" type="Button" parent="BaseNode2D/VBoxContainer3" index="1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3ecpc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
+disabled = true
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "space"
+script = ExtResource("7_a7pon")
+isActiveButton = null
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BaseNode2D" index="9"]
+offset_left = -300.0
+offset_top = -142.0
+offset_right = -23.0
+offset_bottom = -72.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D/VBoxContainer2" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+text = "Движение влево"
+script = ExtResource("6_whrpf")
+
+[node name="BaseGameButton" type="Button" parent="BaseNode2D/VBoxContainer2" index="1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5wie")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
+disabled = true
+button_mask = 4
+text = ">"
+script = ExtResource("7_a7pon")
+isActiveButton = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseNode2D" index="10"]
+offset_left = -922.0
+offset_top = -142.0
+offset_right = -645.0
+offset_bottom = -101.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+text = "Движение влево"
+script = ExtResource("6_whrpf")
+
+[node name="BaseGameButton" type="Button" parent="BaseNode2D/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_68ayb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5tc7o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
+disabled = true
+button_mask = 4
+text = "<"
+script = ExtResource("7_a7pon")
+isActiveButton = null
+
+[node name="Bobot" parent="BaseNode2D" index="11" instance=ExtResource("8_ari4k")]
+position = Vector2(-780, 6)
+
+[node name="BlackScreen" parent="." index="1"]
+top_level = true

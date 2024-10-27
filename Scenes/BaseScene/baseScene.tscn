@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bic5ii30cvlub"]
+
+[ext_resource type="Script" path="res://Scenes/BaseScene/blackScreen.gd" id="1_e6lug"]
+[ext_resource type="Script" path="res://Scripts/levelTransition.gd" id="1_il7td"]
+
+[node name="BaseNode" type="Node"]
+
+[node name="BaseNode2D" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_il7td")
+
+[node name="BlackScreen" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_e6lug")

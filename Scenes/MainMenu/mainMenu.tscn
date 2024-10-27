@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://icuyigaupgf4"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScene/baseScene.tscn" id="1_nbhme"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/menu.gd" id="2_7pwwe"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="3_5hxsr"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="3_afggx"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="5_5x4ph"]
+
+[node name="BaseNode" instance=ExtResource("1_nbhme")]
+script = ExtResource("2_7pwwe")
+
+[node name="vlay_menu" type="VBoxContainer" parent="." index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 100.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="Label" parent="vlay_menu" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "Ultra Platformer"
+horizontal_alignment = 1
+script = ExtResource("3_afggx")
+
+[node name="new_game" type="Button" parent="vlay_menu" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "Начать приключение"
+script = ExtResource("5_5x4ph")
+
+[node name="exit_game" type="Button" parent="vlay_menu" index="2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "Выйти на рабочий стол"
+script = ExtResource("5_5x4ph")
+
+[node name="vlay_level_selection" type="VBoxContainer" parent="." index="1"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -46.5
+offset_right = 57.5
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="level" type="Label" parent="vlay_level_selection" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "Уровни"
+horizontal_alignment = 1
+script = ExtResource("3_afggx")
+
+[node name="GridContainer" type="GridContainer" parent="vlay_level_selection" index="1"]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 4
+
+[node name="tutorial" type="Button" parent="vlay_level_selection/GridContainer" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "1"
+script = ExtResource("5_5x4ph")
+
+[node name="tutorial2" type="Button" parent="vlay_level_selection/GridContainer" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "2"
+script = ExtResource("5_5x4ph")
+
+[node name="back_to_menu" type="Button" parent="vlay_level_selection" index="2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5hxsr")
+theme_override_font_sizes/font_size = 30
+text = "назад"
+script = ExtResource("5_5x4ph")
+
+[connection signal="button_up" from="vlay_menu/new_game" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="vlay_menu/exit_game" to="." method="_on_exit_game_button_up"]
+[connection signal="button_up" from="vlay_level_selection/GridContainer/tutorial" to="." method="_on_tutorial_button_up"]
+[connection signal="button_up" from="vlay_level_selection/GridContainer/tutorial2" to="." method="_on_tutorial_2_button_up"]
+[connection signal="button_up" from="vlay_level_selection/back_to_menu" to="." method="_on_back_to_menu_button_up"]

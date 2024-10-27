@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://btx8b11te6l12"]
+[gd_scene load_steps=4 format=3 uid="uid://btx8b11te6l12"]
 
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_mphtj"]
 [ext_resource type="Texture2D" uid="uid://behaouqhtseuj" path="res://Sprites/platforms.png" id="1_s1n4r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54igr"]
 radius = 20.0
 height = 302.0
 
-[node name="StaticBody2D" type="StaticBody2D" groups=["jumping"]]
+[node name="PlatformJump" type="StaticBody2D" groups=["jumping", "loading_platform"]]
+script = ExtResource("1_mphtj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.329412, 0.423529, 0.313726, 1)
