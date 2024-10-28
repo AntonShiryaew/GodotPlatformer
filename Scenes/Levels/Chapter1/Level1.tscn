@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://1lj8pkpiwqio"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScene/baseScene.tscn" id="1_5460m"]
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_yid55"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_8mfkj"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="4_2rm4q"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="6_h3xkx"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="6_nqaol"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="7_vm1vo"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="8_j0d24"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="9_yyxve"]
+[ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/jump_platform.tscn" id="10_1esss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrn10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfgpa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="BaseNode" instance=ExtResource("1_5460m")]
+
+[node name="BaseNode2D_VBoxContainer#BaseLabel" type="Label" parent="." index="0"]
+theme_override_fonts/font = ExtResource("7_vm1vo")
+theme_override_font_sizes/font_size = 30
+text = "Некоторые уровни могут быть
+больше остальных"
+horizontal_alignment = 1
+script = ExtResource("8_j0d24")
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseNode2D_VBoxContainer#BaseGameButton" type="Button" parent="." index="1"]
+custom_minimum_size = Vector2(50, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("7_vm1vo")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mrn10")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qfgpa")
+disabled = true
+text = "Z"
+script = ExtResource("9_yyxve")
+isActiveButton = false
+
+[node name="BaseNode2D#DeathZone" parent="." index="2" instance=ExtResource("2_yid55")]
+position = Vector2(-6, 746)
+
+[node name="BaseNode2D#Door" parent="." index="3" instance=ExtResource("3_8mfkj")]
+position = Vector2(-1404, -770)
+
+[node name="BaseNode2D_Bobot#Camera2D" type="Camera2D" parent="." index="4"]
+position = Vector2(2, 0)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("6_nqaol")
+
+[node name="BaseNode2D#Platform" parent="." index="5" groups=["loading_platform"] instance=ExtResource("4_2rm4q")]
+position = Vector2(-2, 68)
+
+[node name="BaseNode2D#Platform2" parent="." index="6" instance=ExtResource("4_2rm4q")]
+position = Vector2(438, -42)
+
+[node name="BaseNode2D#Platform3" parent="." index="7" instance=ExtResource("4_2rm4q")]
+position = Vector2(1148, -160)
+
+[node name="BaseNode2D#PlatformJump" parent="." index="8" instance=ExtResource("10_1esss")]
+position = Vector2(1826, -272)
+
+[node name="BaseNode2D#Platform5" parent="." index="9" groups=["loading_platform"] instance=ExtResource("4_2rm4q")]
+position = Vector2(-1374, -624)
+
+[node name="BaseNode2D#VBoxContainer" type="VBoxContainer" parent="." index="10"]
+offset_left = -254.0
+offset_top = -250.0
+offset_right = 258.0
+offset_bottom = -148.0
+
+[node name="BaseNode2D#Bobot" parent="." index="11" instance=ExtResource("6_h3xkx")]
+position = Vector2(2, -6)

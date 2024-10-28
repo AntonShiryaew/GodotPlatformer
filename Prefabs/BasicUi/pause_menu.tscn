@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://k5k55c2umhav"]
+
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="1_kskxq"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/pause_menu.gd" id="1_rdgdl"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="2_2dou1"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="3_3h14u"]
+
+[node name="PauseMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rdgdl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="toContinue" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kskxq")
+theme_override_font_sizes/font_size = 30
+text = "Продолжить"
+script = ExtResource("2_2dou1")
+
+[node name="toReloadLevel" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kskxq")
+theme_override_font_sizes/font_size = 30
+text = "Начать заново"
+script = ExtResource("2_2dou1")
+
+[node name="toSettings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kskxq")
+theme_override_font_sizes/font_size = 30
+text = "Настройки"
+script = ExtResource("2_2dou1")
+
+[node name="toMainMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kskxq")
+theme_override_font_sizes/font_size = 30
+text = "В меню"
+script = ExtResource("2_2dou1")
+
+[node name="BaseLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 167.0
+offset_right = 244.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("1_kskxq")
+theme_override_font_sizes/font_size = 30
+text = "Пауза"
+script = ExtResource("3_3h14u")
+
+[connection signal="button_up" from="Panel/VBoxContainer/toContinue" to="." method="_on_to_continue_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/toReloadLevel" to="." method="_on_to_reload_level_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/toMainMenu" to="." method="_on_to_main_menu_button_up"]
