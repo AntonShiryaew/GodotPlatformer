@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbge7v3jk8a4n"]
+[gd_scene load_steps=12 format=3 uid="uid://dbge7v3jk8a4n"]
 
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="1_37e8o"]
 [ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="2_2cpdf"]
 [ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="2_gibm8"]
 [ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/jump_platform.tscn" id="3_dljig"]
+[ext_resource type="PackedScene" uid="uid://bpcjvw11aw2qy" path="res://Scenes/trail.tscn" id="3_yyu0l"]
 [ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="4_dfu27"]
+[ext_resource type="Script" path="res://Platforms/camera_shake.gd" id="4_dh6hk"]
+[ext_resource type="PackedScene" uid="uid://cxw716cf4pioo" path="res://Platforms/OneWayPlatform.tscn" id="7_82881"]
+[ext_resource type="PackedScene" uid="uid://cv3gesjrg678o" path="res://Platforms/MovingPlatform.tscn" id="8_2t5em"]
+
+[sub_resource type="Curve" id="Curve_0gvpr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.996932, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Environment" id="Environment_fe0hq"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
 
 [node name="TestScene" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -14,9 +28,17 @@ position = Vector2(394, 308)
 scale = Vector2(0.6, 0.6)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_37e8o")]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(-420, 44)
 
+[node name="Trail" parent="CharacterBody2D" instance=ExtResource("3_yyu0l")]
+show_behind_parent = true
+width_curve = SubResource("Curve_0gvpr")
+default_color = Color(0.811765, 0.388235, 0.0627451, 1)
+
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("4_dh6hk")
 
 [node name="plat" parent="." groups=["loading_platform"] instance=ExtResource("2_gibm8")]
 position = Vector2(-421, 125)
@@ -39,3 +61,26 @@ position = Vector2(936, 524)
 
 [node name="Area2D" parent="." instance=ExtResource("4_dfu27")]
 position = Vector2(-624, 634)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+environment = SubResource("Environment_fe0hq")
+camera_attributes = null
+compositor = null
+script = null
+
+[node name="OneWayPlatform" parent="." instance=ExtResource("7_82881")]
+position = Vector2(-1060, 100)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("8_2t5em")]
+position = Vector2(-320, -116)
+
+[connection signal="body_entered" from="Area2D" to="Camera2D" method="_on_area_2d_body_entered"]
