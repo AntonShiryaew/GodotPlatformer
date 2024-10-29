@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bic5ii30cvlub"]
+[gd_scene load_steps=5 format=3 uid="uid://bic5ii30cvlub"]
 
+[ext_resource type="Script" path="res://Scenes/BaseScene/global_pause.gd" id="1_6ed4f"]
 [ext_resource type="Script" path="res://Scenes/BaseScene/blackScreen.gd" id="1_e6lug"]
 [ext_resource type="Script" path="res://Scripts/levelTransition.gd" id="1_il7td"]
+[ext_resource type="PackedScene" uid="uid://k5k55c2umhav" path="res://Prefabs/BasicUi/pause_menu.tscn" id="3_kyk0t"]
 
 [node name="BaseNode" type="Node"]
+process_mode = 3
+script = ExtResource("1_6ed4f")
 
 [node name="BaseNode2D" type="Node2D" parent="."]
+process_mode = 1
 visible = false
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_il7td")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("parentNode") instance=ExtResource("3_kyk0t")]
+parentNode = NodePath("../..")
 
 [node name="BlackScreen" type="ColorRect" parent="."]
 visible = false

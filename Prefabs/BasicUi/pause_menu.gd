@@ -3,7 +3,8 @@ extends Control
 @export var parentNode : BaseScene
 
 func _ready() -> void:
-	parentNode.connect("game_paused", on_game_pause_change)
+	if parentNode.get_script().get_global_name() == "BaseScene":
+		parentNode.connect("game_paused", on_game_pause_change)
 
 func on_game_pause_change(paused : bool) -> void:
 	if paused:

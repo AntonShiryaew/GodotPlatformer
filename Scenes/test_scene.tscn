@@ -63,19 +63,7 @@ position = Vector2(936, 524)
 position = Vector2(-624, 634)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
 environment = SubResource("Environment_fe0hq")
-camera_attributes = null
-compositor = null
-script = null
 
 [node name="OneWayPlatform" parent="." instance=ExtResource("7_82881")]
 position = Vector2(-1060, 100)

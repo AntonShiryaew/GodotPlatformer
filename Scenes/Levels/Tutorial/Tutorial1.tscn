@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_a7pon"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_ari4k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ecpc"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5fvf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pshr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8ghv"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -35,9 +35,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5wie"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uxb7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tc7o"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct185"]
 
 [node name="BaseNode" instance=ExtResource("1_s6p5h")]
 
@@ -93,8 +93,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3ecpc")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p5fvf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 shortcut_feedback = false
@@ -125,8 +125,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_y5wie")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8uxb7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
@@ -156,8 +156,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5tc7o")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2pshr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ct185")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
@@ -168,5 +168,5 @@ isActiveButton = null
 [node name="Bobot" parent="BaseNode2D" index="11" instance=ExtResource("8_ari4k")]
 position = Vector2(-780, 6)
 
-[node name="BlackScreen" parent="." index="1"]
+[node name="BlackScreen" parent="." index="2"]
 top_level = true
