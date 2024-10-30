@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsedpm5rfdof1"]
+[gd_scene load_steps=16 format=3 uid="uid://dsedpm5rfdof1"]
 
 [ext_resource type="Script" path="res://Scripts/bobot_move.gd" id="1_ky87w"]
 [ext_resource type="Texture2D" uid="uid://cgxr3e0vd2f87" path="res://Sprites/bobot.png" id="1_rf32u"]
+[ext_resource type="PackedScene" uid="uid://bpcjvw11aw2qy" path="res://Scenes/trail.tscn" id="3_icty3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1arjt"]
 atlas = ExtResource("1_rf32u")
@@ -95,12 +96,18 @@ animations = [{
 radius = 49.0
 
 [node name="Bobot" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ky87w")
+
+[node name="Trail" parent="." instance=ExtResource("3_icty3")]
+show_behind_parent = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_15yes")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
+frame_progress = 0.542465
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h7c2d")

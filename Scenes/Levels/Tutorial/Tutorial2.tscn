@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://c00rmsr1q3kg6"]
 
-[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScene/baseScene.tscn" id="1_ctx7a"]
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScenes/baseScene.tscn" id="1_ctx7a"]
 [ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_dqve2"]
 [ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_5nwyn"]
-[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="4_ftxkk"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/Platforms/platform_pref.tscn" id="4_ftxkk"]
 [ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="5_jjiq5"]
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="6_37s6a"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="7_4j43b"]
-[ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/jump_platform.tscn" id="8_jiok2"]
+[ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/Platforms/jump_platform.tscn" id="8_jiok2"]
 
 [node name="BaseNode" instance=ExtResource("1_ctx7a")]
 
@@ -32,7 +32,7 @@ position = Vector2(-780, 80)
 [node name="Platform5" parent="BaseNode2D" index="4" groups=["loading_platform"] instance=ExtResource("4_ftxkk")]
 position = Vector2(688, -246)
 
-[node name="PlatformJump" parent="BaseNode2D" index="5" instance=ExtResource("8_jiok2")]
+[node name="PlatformJump" parent="BaseNode2D" index="5" groups=["loading_platform"] instance=ExtResource("8_jiok2")]
 position = Vector2(2, 232)
 
 [node name="BaseLabel" type="Label" parent="BaseNode2D" index="6"]
@@ -48,3 +48,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Bobot" parent="BaseNode2D" index="7" instance=ExtResource("7_4j43b")]
 position = Vector2(-780, 8)
+collision_layer = 1
+collision_mask = 1

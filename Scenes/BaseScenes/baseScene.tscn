@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bic5ii30cvlub"]
 
-[ext_resource type="Script" path="res://Scenes/BaseScene/global_pause.gd" id="1_6ed4f"]
-[ext_resource type="Script" path="res://Scenes/BaseScene/blackScreen.gd" id="1_e6lug"]
+[ext_resource type="Script" path="res://Scenes/BaseScenes/global_pause.gd" id="1_6ed4f"]
+[ext_resource type="Script" path="res://Scenes/BaseScenes/blackScreen.gd" id="1_e6lug"]
 [ext_resource type="Script" path="res://Scripts/levelTransition.gd" id="1_il7td"]
 [ext_resource type="PackedScene" uid="uid://k5k55c2umhav" path="res://Prefabs/BasicUi/pause_menu.tscn" id="3_kyk0t"]
 

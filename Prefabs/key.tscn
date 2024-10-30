@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1efgc47obe7a"]
+
+[ext_resource type="Script" path="res://Scripts/key_logic.gd" id="1_bcge5"]
+[ext_resource type="Texture2D" uid="uid://de7e7krt7vfcq" path="res://Sprites/key.png" id="1_inow7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ucs3"]
+size = Vector2(28, 59)
+
+[sub_resource type="Gradient" id="Gradient_48kl0"]
+offsets = PackedFloat32Array(0.529605, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yjwgy"]
+gradient = SubResource("Gradient_48kl0")
+
+[sub_resource type="Curve" id="Curve_j8oaj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_f8sw8"]
+curve = SubResource("Curve_j8oaj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v57yl"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_max = 150.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_f8sw8")
+color_ramp = SubResource("GradientTexture1D_yjwgy")
+
+[node name="Key" type="Area2D"]
+script = ExtResource("1_bcge5")
+
+[node name="KeySprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_inow7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5ucs3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0.466667, 0.172549, 1)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_v57yl")
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

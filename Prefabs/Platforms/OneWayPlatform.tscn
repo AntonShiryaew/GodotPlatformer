@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxw716cf4pioo"]
+[gd_scene load_steps=4 format=3 uid="uid://cxw716cf4pioo"]
 
 [ext_resource type="Texture2D" uid="uid://behaouqhtseuj" path="res://Sprites/platforms.png" id="1_4ej0b"]
+[ext_resource type="Script" path="res://Scripts/platform.gd" id="1_whcsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6d1q"]
 size = Vector2(303, 39)
 
 [node name="OneWayPlatform" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["loading_platform"]]
+script = ExtResource("1_whcsj")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 texture = ExtResource("1_4ej0b")

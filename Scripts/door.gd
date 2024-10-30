@@ -2,6 +2,7 @@ extends Area2D
 
 @export var next_scene_path : String
 @onready var collider_scale = $CollisionShape2D.shape.size
+@onready var particles = $Particles
 
 func getNextScenePath() -> String:
 	return next_scene_path
@@ -18,5 +19,5 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.name == "Bobot"):
+	if(body.name == "Bobot" and particles.amount_ratio != 0):
 		body.call_end()

@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=3 uid="uid://d1fiyns5boq01"]
 
-[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScene/baseScene.tscn" id="1_s6p5h"]
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScenes/baseScene.tscn" id="1_s6p5h"]
 [ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_7n4yv"]
 [ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_uoeyh"]
-[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/platform_pref.tscn" id="4_bljre"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/Platforms/platform_pref.tscn" id="4_bljre"]
 [ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="5_68ayb"]
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="6_whrpf"]
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_a7pon"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_ari4k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5fvf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbras"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8ghv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vswhw"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -35,9 +35,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uxb7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcntl"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ct185"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm58j"]
 
 [node name="BaseNode" instance=ExtResource("1_s6p5h")]
 
@@ -93,8 +93,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_p5fvf")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mbras")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 shortcut_feedback = false
@@ -125,8 +125,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8uxb7")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qcntl")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
@@ -156,8 +156,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ct185")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_k8ghv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cm58j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
@@ -166,7 +166,11 @@ script = ExtResource("7_a7pon")
 isActiveButton = null
 
 [node name="Bobot" parent="BaseNode2D" index="11" instance=ExtResource("8_ari4k")]
-position = Vector2(-780, 6)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-772, 6)
+collision_layer = 1
+collision_mask = 1
 
 [node name="BlackScreen" parent="." index="2"]
 top_level = true

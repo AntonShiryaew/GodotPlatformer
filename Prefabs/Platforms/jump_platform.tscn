@@ -7,7 +7,7 @@
 radius = 20.0
 height = 302.0
 
-[node name="PlatformJump" type="StaticBody2D" groups=["jumping", "loading_platform"]]
+[node name="PlatformJump" type="StaticBody2D" groups=["jumping"]]
 script = ExtResource("1_mphtj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

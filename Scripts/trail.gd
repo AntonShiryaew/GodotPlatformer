@@ -1,6 +1,6 @@
 extends Line2D
 
-var point_length = 10
+var point_length = 50
 var point_velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -9,8 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	global_position = Vector2(0,0)
-	global_rotation = 0
+	global_position = get_parent().get_parent().position
+	rotation = 0
 	
 	point_velocity = get_parent().position
 	
