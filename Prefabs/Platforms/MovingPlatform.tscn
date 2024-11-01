@@ -5,6 +5,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dg4g"]
 size = Vector2(304, 35)
 
+[sub_resource type="Animation" id="Animation_sxbjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_fiodj"]
 resource_name = "move_loop"
 length = 2.2
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(584, 0), Vector2(584, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_sxbjd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5td3"]
 _data = {
 "RESET": SubResource("Animation_sxbjd"),
@@ -49,6 +49,7 @@ _data = {
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
+modulate = Color(0.433392, 0.336151, 1, 1)
 texture = ExtResource("1_etxse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]

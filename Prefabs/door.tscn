@@ -23,6 +23,7 @@ turbulence_influence_min = 0.131
 turbulence_influence_max = 0.246
 
 [node name="Door" type="Area2D"]
+process_mode = 3
 script = ExtResource("1_dav67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

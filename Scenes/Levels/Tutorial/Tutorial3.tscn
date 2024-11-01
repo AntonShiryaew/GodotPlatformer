@@ -1,0 +1,198 @@
+[gd_scene load_steps=16 format=3 uid="uid://bs60b7xcqvek1"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScenes/baseScene.tscn" id="1_hwhpj"]
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_57f04"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_f48t8"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/Platforms/platform_pref.tscn" id="4_wlx8d"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="5_25owd"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="6_u25cy"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_8bn0a"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_82ouk"]
+[ext_resource type="PackedScene" uid="uid://cxw716cf4pioo" path="res://Prefabs/Platforms/OneWayPlatform.tscn" id="9_8oyma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i87k5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_654ek"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vj6kp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2a4fo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nrvj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq5if"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="BaseNode" instance=ExtResource("1_hwhpj")]
+
+[node name="BaseNode2D" parent="." index="0"]
+visible = true
+position = Vector2(961, 540)
+
+[node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
+position = Vector2(2, 0)
+
+[node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_57f04")]
+position = Vector2(-4, 744)
+
+[node name="Door" parent="BaseNode2D" index="2" instance=ExtResource("3_f48t8")]
+position = Vector2(224, 112)
+next_scene_path = "res://Scenes/Levels/Tutorial/Tutorial4.tscn"
+
+[node name="Platform" parent="BaseNode2D" index="3" groups=["loading_platform"] instance=ExtResource("4_wlx8d")]
+position = Vector2(-308, 257)
+
+[node name="Platform2" parent="BaseNode2D" index="4" groups=["loading_platform"] instance=ExtResource("4_wlx8d")]
+position = Vector2(50, 124)
+rotation = 1.5708
+
+[node name="Platform3" parent="BaseNode2D" index="5" groups=["loading_platform"] instance=ExtResource("4_wlx8d")]
+position = Vector2(396, 124)
+rotation = 1.5708
+
+[node name="Platform4" parent="BaseNode2D" index="6" groups=["loading_platform"] instance=ExtResource("4_wlx8d")]
+position = Vector2(222, 257)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="BaseNode2D" index="7"]
+offset_left = -770.0
+offset_top = 84.0
+offset_right = -485.0
+offset_bottom = 240.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D/VBoxContainer3" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+text = "Двойной прыжок"
+horizontal_alignment = 1
+script = ExtResource("6_u25cy")
+
+[node name="BaseGameButton" type="Button" parent="BaseNode2D/VBoxContainer3" index="1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i87k5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_654ek")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
+disabled = true
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "space"
+script = ExtResource("7_8bn0a")
+isActiveButton = null
+
+[node name="BaseLabel2" type="Label" parent="BaseNode2D/VBoxContainer3" index="2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+text = "+"
+horizontal_alignment = 1
+script = ExtResource("6_u25cy")
+
+[node name="BaseGameButton2" type="Button" parent="BaseNode2D/VBoxContainer3" index="3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2a4fo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_654ek")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
+disabled = true
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "space"
+script = ExtResource("7_8bn0a")
+isActiveButton = null
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D" index="8"]
+offset_left = -534.0
+offset_top = -100.0
+offset_right = -68.0
+offset_bottom = -39.0
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+text = "Эту платформу
+можно пройти насквозь"
+horizontal_alignment = 1
+script = ExtResource("6_u25cy")
+
+[node name="Bobot" parent="BaseNode2D" index="9" instance=ExtResource("8_82ouk")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-300, 184)
+collision_layer = 1
+collision_mask = 1
+
+[node name="OneWayPlatform" parent="BaseNode2D" index="10" instance=ExtResource("9_8oyma")]
+position = Vector2(224, -100)
+
+[node name="OneWayPlatform2" parent="BaseNode2D" index="11" instance=ExtResource("9_8oyma")]
+position = Vector2(-306, -8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseNode2D" index="12"]
+offset_left = 80.0
+offset_top = -328.0
+offset_right = 359.0
+offset_bottom = -258.0
+
+[node name="BaseLabel2" type="Label" parent="BaseNode2D/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+text = "Спуститься вниз"
+horizontal_alignment = 1
+script = ExtResource("6_u25cy")
+
+[node name="BaseGameButton2" type="Button" parent="BaseNode2D/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("5_25owd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2nrvj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_654ek")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dq5if")
+disabled = true
+button_mask = 4
+text = "S"
+script = ExtResource("7_8bn0a")
+isActiveButton = null

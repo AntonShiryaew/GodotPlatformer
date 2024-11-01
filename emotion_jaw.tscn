@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvh3vbpsxisbt"]
+
+[ext_resource type="Texture2D" uid="uid://15v65mw3kmrb" path="res://Sprites/emotion/up_jaw.png" id="1_uwmsv"]
+[ext_resource type="Texture2D" uid="uid://b3h5fw1ejrwc7" path="res://Sprites/emotion/down_jaw.png" id="2_x5v1t"]
+
+[sub_resource type="Animation" id="Animation_2grpg"]
+resource_name = "talking"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DownJaw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 32), Vector2(0, 69)]
+}
+
+[sub_resource type="Animation" id="Animation_36yqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DownJaw:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1g54"]
+_data = {
+"RESET": SubResource("Animation_36yqq"),
+"talking": SubResource("Animation_2grpg")
+}
+
+[node name="EmotionJaw" type="Node2D"]
+
+[node name="UpJaw" type="Sprite2D" parent="."]
+texture = ExtResource("1_uwmsv")
+
+[node name="DownJaw" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("2_x5v1t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j1g54")
+}

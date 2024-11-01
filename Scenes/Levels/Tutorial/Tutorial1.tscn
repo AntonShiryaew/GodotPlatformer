@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_a7pon"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_ari4k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbras"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2e1tu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vswhw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0pq2"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -35,9 +35,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcntl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wani1"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm58j"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2t7b6"]
 
 [node name="BaseNode" instance=ExtResource("1_s6p5h")]
 
@@ -46,7 +46,6 @@ visible = true
 position = Vector2(961, 538)
 
 [node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
-zoom = Vector2(1.5, 1.5)
 
 [node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_7n4yv")]
 position = Vector2(-6, 744)
@@ -93,8 +92,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mbras")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2e1tu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0pq2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 shortcut_feedback = false
@@ -114,7 +113,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-text = "Движение влево"
+text = "Движение вправо"
 script = ExtResource("6_whrpf")
 
 [node name="BaseGameButton" type="Button" parent="BaseNode2D/VBoxContainer2" index="1"]
@@ -125,12 +124,12 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qcntl")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wani1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0pq2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
-text = ">"
+text = "D"
 script = ExtResource("7_a7pon")
 isActiveButton = null
 
@@ -156,12 +155,12 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_cm58j")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vswhw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2t7b6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0pq2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
 button_mask = 4
-text = "<"
+text = "A"
 script = ExtResource("7_a7pon")
 isActiveButton = null
 

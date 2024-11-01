@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://snwsxl8qbk4o"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScenes/baseScene.tscn" id="1_qxt8l"]
+[ext_resource type="PackedScene" uid="uid://ckv1u7lq8yvut" path="res://Prefabs/death_zone.tscn" id="2_wucok"]
+[ext_resource type="PackedScene" uid="uid://dw6l1qooio0va" path="res://Prefabs/door.tscn" id="3_6it5p"]
+[ext_resource type="PackedScene" uid="uid://clb50a7t5k2xu" path="res://Prefabs/Platforms/platform_pref.tscn" id="4_kjgyp"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="5_duhmy"]
+[ext_resource type="PackedScene" uid="uid://cxw716cf4pioo" path="res://Prefabs/Platforms/OneWayPlatform.tscn" id="6_62yja"]
+[ext_resource type="PackedScene" uid="uid://btx8b11te6l12" path="res://Prefabs/Platforms/jump_platform.tscn" id="7_g6pvq"]
+[ext_resource type="PackedScene" uid="uid://c1efgc47obe7a" path="res://Prefabs/key.tscn" id="8_du4py"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="9_yeuyr"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="10_t8tx2"]
+
+[node name="BaseNode" instance=ExtResource("1_qxt8l")]
+
+[node name="BaseNode2D" parent="." index="0"]
+visible = true
+position = Vector2(962, 542)
+
+[node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
+
+[node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_wucok")]
+position = Vector2(0, 744)
+
+[node name="Door" parent="BaseNode2D" index="2" instance=ExtResource("3_6it5p")]
+position = Vector2(0, -482)
+next_scene_path = "res://Scenes/test_scene.tscn"
+
+[node name="Platform" parent="BaseNode2D" index="3" groups=["loading_platform"] instance=ExtResource("4_kjgyp")]
+position = Vector2(446, 650)
+
+[node name="Platform2" parent="BaseNode2D" index="4" groups=["loading_platform"] instance=ExtResource("4_kjgyp")]
+position = Vector2(0, -336)
+
+[node name="Platform4" parent="BaseNode2D" index="5" groups=["loading_platform"] instance=ExtResource("4_kjgyp")]
+position = Vector2(-932, -336)
+
+[node name="BaseLabel" type="Label" parent="BaseNode2D" index="6"]
+offset_left = -758.0
+offset_top = -582.0
+offset_right = -180.0
+offset_bottom = -521.0
+theme_override_fonts/font = ExtResource("9_yeuyr")
+theme_override_font_sizes/font_size = 30
+text = "Иногда, чтобы запустить процесс
+перехода, необходимо найти ключ"
+horizontal_alignment = 1
+script = ExtResource("10_t8tx2")
+
+[node name="Bobot" parent="BaseNode2D" index="7" instance=ExtResource("5_duhmy")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(446, 572)
+collision_layer = 1
+collision_mask = 1
+
+[node name="OneWayPlatform" parent="BaseNode2D" index="8" instance=ExtResource("6_62yja")]
+position = Vector2(446, 400)
+
+[node name="OneWayPlatform2" parent="BaseNode2D" index="9" instance=ExtResource("6_62yja")]
+position = Vector2(446, 150)
+
+[node name="PlatformJump2" parent="BaseNode2D" index="10" groups=["loading_platform"] instance=ExtResource("7_g6pvq")]
+position = Vector2(-456, 150)
+
+[node name="Key" parent="BaseNode2D" index="11" instance=ExtResource("8_du4py")]
+position = Vector2(-932, -406)

@@ -17,14 +17,13 @@ position = Vector2(966, 535)
 
 [node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
 position = Vector2(-6, 12)
-zoom = Vector2(1.5, 1.5)
 
 [node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_dqve2")]
 position = Vector2(-6, 746)
 
 [node name="Door" parent="BaseNode2D" index="2" instance=ExtResource("3_5nwyn")]
 position = Vector2(714, -392)
-next_scene_path = "res://Scenes/test_scene.tscn"
+next_scene_path = "res://Scenes/Levels/Tutorial/Tutorial3.tscn"
 
 [node name="Platform" parent="BaseNode2D" index="3" groups=["loading_platform"] instance=ExtResource("4_ftxkk")]
 position = Vector2(-780, 80)
