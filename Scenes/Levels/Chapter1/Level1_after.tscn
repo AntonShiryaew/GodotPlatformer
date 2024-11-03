@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://d7jdvqa26a2e"]
+
+[ext_resource type="PackedScene" uid="uid://bic5ii30cvlub" path="res://Scenes/BaseScenes/baseScene.tscn" id="1_j5olj"]
+[ext_resource type="PackedScene" uid="uid://dolberoonjt3" path="res://emotion_face.tscn" id="2_guh3x"]
+[ext_resource type="FontFile" uid="uid://cw6u87jxtc12" path="res://Fonts/Parisian.otf" id="4_bn156"]
+[ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="5_qs1da"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_06e5p"]
+normal = Vector2(1.29312e-07, -1)
+distance = -16.0
+
+[node name="BaseNode" instance=ExtResource("1_j5olj")]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BaseNode2D" parent="." index="1"]
+visible = true
+position = Vector2(804, 448)
+
+[node name="Bobot" parent="BaseNode2D" index="0" instance=ExtResource("5_qs1da")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-868, -1100)
+collision_layer = 1
+collision_mask = 1
+
+[node name="EmotionFace" parent="BaseNode2D" index="1" node_paths=PackedStringArray("bobot") instance=ExtResource("2_guh3x")]
+z_index = 1
+position = Vector2(-774, -576)
+bobot = NodePath("../Bobot")
+
+[node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="2"]
+position = Vector2(-8, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaseNode2D" index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseNode2D/StaticBody2D" index="0"]
+position = Vector2(2, 412)
+shape = SubResource("WorldBoundaryShape2D_06e5p")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="BaseNode2D" index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseNode2D/StaticBody2D2" index="0"]
+position = Vector2(1570, 268)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_06e5p")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="BaseNode2D" index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseNode2D/StaticBody2D3" index="0"]
+position = Vector2(-1590, 268)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_06e5p")
+
+[node name="Label" type="Label" parent="BaseNode2D" index="6"]
+visible = false
+offset_left = 518.0
+offset_top = -514.0
+offset_right = 1047.0
+offset_bottom = -402.0
+theme_override_fonts/font = ExtResource("4_bn156")
+theme_override_font_sizes/font_size = 100
+text = "Здравствуй !"
+
+[node name="Label2" type="Label" parent="BaseNode2D" index="7"]
+visible = false
+offset_left = 518.0
+offset_top = -350.0
+offset_right = 1047.0
+offset_bottom = -238.0
+theme_override_fonts/font = ExtResource("4_bn156")
+theme_override_font_sizes/font_size = 100
+text = "Мы будто не виделись
+вечность!"
+
+[node name="Label3" type="Label" parent="BaseNode2D" index="8"]
+visible = false
+offset_left = 520.0
+offset_top = -60.0
+offset_right = 1049.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("4_bn156")
+theme_override_font_sizes/font_size = 100
+text = "Ещё увидимся!"

@@ -32,3 +32,15 @@ func _on_tutorial_button_up() -> void:
 func _on_tutorial_2_button_up() -> void:
 	next_scene = preload("res://Scenes/Levels/Tutorial/Tutorial2.tscn")
 	screen.set_process_rect(GlobalDescRect.RECT_PROCESS_STATE.ON_APPEAR)
+	
+func _on_tutorial_3_button_up() -> void:
+	next_scene = preload("res://Scenes/Levels/Tutorial/Tutorial3.tscn")
+	screen.set_process_rect(GlobalDescRect.RECT_PROCESS_STATE.ON_APPEAR)
+	
+func _on_tutorial_4_button_up() -> void:
+	next_scene = preload("res://Scenes/Levels/Tutorial/Tutorial4.tscn")
+	screen.set_process_rect(GlobalDescRect.RECT_PROCESS_STATE.ON_APPEAR)
+
+func _on_level_button_up() -> void:
+	next_scene = preload("res://Scenes/Levels/Chapter1/Level1.tscn")
+	screen.set_process_rect(GlobalDescRect.RECT_PROCESS_STATE.ON_APPEAR)

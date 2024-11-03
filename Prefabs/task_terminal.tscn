@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccga2qs78wtor"]
+
+[ext_resource type="PackedScene" uid="uid://b8kq1ik8a6o2t" path="res://Prefabs/terminal.tscn" id="1_xwvqj"]
+[ext_resource type="Script" path="res://Prefabs/canvas_task.gd" id="2_gfewm"]
+[ext_resource type="Script" path="res://Prefabs/polygon_2d.gd" id="2_v1cdj"]
+[ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="3_sda06"]
+[ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="4_bslt2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nuji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2g02"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Terminal" instance=ExtResource("1_xwvqj")]
+
+[node name="EButton" parent="." index="2"]
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4nuji")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y2g02")
+disabled = true
+
+[node name="Canvas" parent="." index="3"]
+script = ExtResource("2_gfewm")
+
+[node name="Panel" type="Panel" parent="Canvas" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Canvas/Panel" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="Canvas/Panel/GridContainer" index="0"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Canvas/Panel/GridContainer" index="1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Canvas/Panel/GridContainer" index="2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="blue_arrrow" type="Polygon2D" parent="Canvas/Panel/GridContainer/ColorRect3" index="0"]
+position = Vector2(50, 50)
+color = Color(0.878431, 0.266667, 0.160784, 1)
+polygon = PackedVector2Array(-40, 0, 40, -40, 8, 0, 40, 40)
+script = ExtResource("2_v1cdj")
+colors = Array[Color]([Color(0.878431, 0.266667, 0.160784, 1), Color(1, 1, 1, 1), Color(0, 0, 1, 1)])
+
+[node name="ColorRect4" type="ColorRect" parent="Canvas/Panel/GridContainer" index="3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="yellow_arrow" type="Polygon2D" parent="Canvas/Panel/GridContainer/ColorRect4" index="0"]
+position = Vector2(50, 50)
+rotation = 1.5708
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-40, 0, 40, -40, 8, 0, 40, 40)
+script = ExtResource("2_v1cdj")
+colors = Array[Color]([Color(1, 1, 0, 1), Color(1, 0, 0, 1), Color(0, 1, 0, 1)])
+
+[node name="ColorRect5" type="ColorRect" parent="Canvas/Panel/GridContainer" index="4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="pink_arrow" type="Polygon2D" parent="Canvas/Panel/GridContainer/ColorRect5" index="0"]
+position = Vector2(39, 38)
+rotation = 0.785398
+color = Color(0, 0.266667, 0.160784, 1)
+polygon = PackedVector2Array(-40, 0, 40, -40, 8, 0, 40, 40)
+script = ExtResource("2_v1cdj")
+colors = Array[Color]([Color(0, 0.266667, 0.160784, 1), Color(0.32549, 0.490196, 1, 1), Color(1, 0, 1, 1)])
+
+[node name="ColorRect6" type="ColorRect" parent="Canvas/Panel/GridContainer" index="5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="false_arrow" type="Polygon2D" parent="Canvas/Panel/GridContainer/ColorRect6" index="0"]
+position = Vector2(39, 38)
+rotation = 0.785398
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-40, 0, 40, -40, 8, 0, 40, 40)
+script = ExtResource("2_v1cdj")
+colors = Array[Color]([Color(1, 0, 1, 1), Color(0, 0, 1, 1), Color(1, 1, 0, 1)])
+
+[node name="Check" type="Button" parent="Canvas/Panel" index="1"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 357.0
+offset_right = 376.0
+offset_bottom = 394.0
+theme_override_fonts/font = ExtResource("3_sda06")
+theme_override_font_sizes/font_size = 30
+text = "Проверить"
+script = ExtResource("4_bslt2")
+
+[connection signal="button_up" from="Canvas/Panel/Check" to="Canvas" method="_on_check_button_up"]

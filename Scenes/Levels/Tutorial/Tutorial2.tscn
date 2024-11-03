@@ -13,10 +13,10 @@
 
 [node name="BaseNode2D" parent="." index="0"]
 visible = true
-position = Vector2(966, 535)
+position = Vector2(763, 418)
 
 [node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
-position = Vector2(-6, 12)
+position = Vector2(82, 72)
 
 [node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_dqve2")]
 position = Vector2(-6, 746)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dolberoonjt3"]
+[gd_scene load_steps=5 format=3 uid="uid://dolberoonjt3"]
 
 [ext_resource type="PackedScene" uid="uid://n7cqebjxb5ku" path="res://emotion_eye.tscn" id="1_44hjt"]
+[ext_resource type="Script" path="res://emotion_face.gd" id="1_qwmrm"]
 [ext_resource type="PackedScene" uid="uid://dvh3vbpsxisbt" path="res://emotion_jaw.tscn" id="2_8j47c"]
+[ext_resource type="AudioStream" uid="uid://utemap05427j" path="res://Sound/Laugh/emotional_laugh.wav" id="4_16jpc"]
 
 [node name="EmotionFace" type="Node2D"]
+script = ExtResource("1_qwmrm")
 
 [node name="Eye_left" parent="." instance=ExtResource("1_44hjt")]
 position = Vector2(994, 251)
@@ -13,3 +16,6 @@ position = Vector2(566, 238)
 
 [node name="EmotionJaw" parent="." instance=ExtResource("2_8j47c")]
 position = Vector2(782, 634)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_16jpc")

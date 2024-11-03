@@ -15,16 +15,17 @@
 
 [node name="BaseNode2D" parent="." index="0"]
 visible = true
-position = Vector2(962, 542)
+position = Vector2(800, 395)
 
 [node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
+position = Vector2(6, 120)
 
 [node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_wucok")]
 position = Vector2(0, 744)
 
 [node name="Door" parent="BaseNode2D" index="2" instance=ExtResource("3_6it5p")]
 position = Vector2(0, -482)
-next_scene_path = "res://Scenes/test_scene.tscn"
+next_scene_path = "res://Scenes/Levels/Chapter1/Level1.tscn"
 
 [node name="Platform" parent="BaseNode2D" index="3" groups=["loading_platform"] instance=ExtResource("4_kjgyp")]
 position = Vector2(446, 650)
