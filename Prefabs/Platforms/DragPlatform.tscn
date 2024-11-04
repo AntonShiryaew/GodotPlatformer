@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsw8fryrehcr3"]
+
+[ext_resource type="Script" path="res://Prefabs/Platforms/drag_platform.gd" id="1_wiav0"]
+[ext_resource type="Texture2D" uid="uid://behaouqhtseuj" path="res://Sprites/platforms.png" id="2_nfbgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq7wk"]
+size = Vector2(306, 43)
+
+[node name="DragPlatform" type="Node2D"]
+script = ExtResource("1_wiav0")
+
+[node name="AnimatableBody2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+modulate = Color(0.525889, 0.53295, 0.810193, 1)
+texture = ExtResource("2_nfbgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(2, -0.5)
+shape = SubResource("RectangleShape2D_aq7wk")
+debug_color = Color(0.984091, 0, 0.346881, 0.42)
+
+[connection signal="input_event" from="AnimatableBody2D" to="." method="_on_animatable_body_2d_input_event"]

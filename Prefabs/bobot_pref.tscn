@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsedpm5rfdof1"]
+[gd_scene load_steps=17 format=3 uid="uid://dsedpm5rfdof1"]
 
 [ext_resource type="Script" path="res://Scripts/bobot_move.gd" id="1_ky87w"]
 [ext_resource type="Texture2D" uid="uid://cgxr3e0vd2f87" path="res://Sprites/bobot.png" id="1_rf32u"]
 [ext_resource type="PackedScene" uid="uid://bpcjvw11aw2qy" path="res://Scenes/trail.tscn" id="3_icty3"]
+[ext_resource type="AudioStream" uid="uid://bgfq4kprcct4r" path="res://Sound/jump.wav" id="4_htjl8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1arjt"]
 atlas = ExtResource("1_rf32u")
@@ -110,3 +111,9 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h7c2d")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_htjl8")
+volume_db = -8.89
+pitch_scale = 1.69
+attenuation = 0.00680119
