@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bic5ii30cvlub"]
+[gd_scene load_steps=6 format=3 uid="uid://bic5ii30cvlub"]
 
 [ext_resource type="Script" path="res://Scenes/BaseScenes/global_pause.gd" id="1_6ed4f"]
 [ext_resource type="Script" path="res://Scenes/BaseScenes/blackScreen.gd" id="1_e6lug"]
 [ext_resource type="Script" path="res://Scripts/levelTransition.gd" id="1_il7td"]
 [ext_resource type="PackedScene" uid="uid://k5k55c2umhav" path="res://Prefabs/BasicUi/pause_menu.tscn" id="3_kyk0t"]
+[ext_resource type="Texture2D" uid="uid://d0hhgg0nmqa2k" path="res://Sprites/background.png" id="4_rla2g"]
 
 [node name="BaseNode" type="Node"]
 process_mode = 3
@@ -19,6 +20,38 @@ script = ExtResource("1_il7td")
 
 [node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("parentNode") instance=ExtResource("3_kyk0t")]
 parentNode = NodePath("../..")
+
+[node name="Background" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="layer_1" type="ParallaxLayer" parent="CanvasLayer/Background"]
+motion_mirroring = Vector2(440, 820)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
+modulate = Color(0.529067, 0.529067, 0.529067, 1)
+position = Vector2(240, 431)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_rla2g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
+modulate = Color(0.529412, 0.529412, 0.529412, 1)
+position = Vector2(1120, 431)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_rla2g")
+
+[node name="layer_2" type="ParallaxLayer" parent="CanvasLayer/Background"]
+motion_mirroring = Vector2(500, 820)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
+modulate = Color(0.804743, 0.804743, 0.804743, 1)
+position = Vector2(50, 450)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_rla2g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
+modulate = Color(0.803922, 0.803922, 0.803922, 1)
+position = Vector2(1050, 450)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_rla2g")
 
 [node name="BlackScreen" type="ColorRect" parent="."]
 visible = false

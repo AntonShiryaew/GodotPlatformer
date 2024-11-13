@@ -14,6 +14,7 @@ signal appear
 func _ready() -> void:
 	visible = true
 	pivot_offset = Vector2(size.x / 2, size.y / 2)
+	size = get_viewport_rect().size;
 
 func to_disappear() -> bool:
 	if modulate.a <= 0:

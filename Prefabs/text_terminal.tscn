@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://bb04hlpa48pbq" path="res://Fonts/BulatovSPDemo.otf" id="2_o011x"]
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseLabel.gd" id="3_iv7id"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74530"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lv13r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nooa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkkx0"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -22,8 +22,8 @@ corner_detail = 5
 
 [node name="EButton" parent="." index="2"]
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_74530")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2nooa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lv13r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jkkx0")
 disabled = true
 
 [node name="Panel" type="Panel" parent="Canvas" index="0"]

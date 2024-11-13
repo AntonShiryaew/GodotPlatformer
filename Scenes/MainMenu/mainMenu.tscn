@@ -123,6 +123,9 @@ theme_override_font_sizes/font_size = 30
 text = "назад"
 script = ExtResource("5_5x4ph")
 
+[node name="ParallaxBackground" parent="CanvasLayer" index="1"]
+visible = false
+
 [node name="BlackScreen" parent="." index="4"]
 z_index = 1
 

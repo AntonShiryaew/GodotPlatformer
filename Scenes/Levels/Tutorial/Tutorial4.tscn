@@ -55,10 +55,10 @@ position = Vector2(446, 572)
 collision_layer = 1
 collision_mask = 1
 
-[node name="OneWayPlatform" parent="BaseNode2D" index="8" instance=ExtResource("6_62yja")]
+[node name="OneWayPlatform" parent="BaseNode2D" index="8" groups=["trough_way"] instance=ExtResource("6_62yja")]
 position = Vector2(446, 400)
 
-[node name="OneWayPlatform2" parent="BaseNode2D" index="9" instance=ExtResource("6_62yja")]
+[node name="OneWayPlatform2" parent="BaseNode2D" index="9" groups=["trough_way"] instance=ExtResource("6_62yja")]
 position = Vector2(446, 150)
 
 [node name="PlatformJump2" parent="BaseNode2D" index="10" groups=["loading_platform"] instance=ExtResource("7_g6pvq")]

@@ -2,12 +2,15 @@ extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
+@onready var collision = $CollisionShape2D
  
 const SPEED = 300.
 const JUMP_FORCE = -400.
 
 var can_doublejump:bool = true
 var readyToDisappear:bool = false
+var go_trough: bool = false
+var direction: int = 0
 
 signal readyToNextLevel
 
@@ -19,10 +22,13 @@ func check_collision() -> void:
 		var collider = get_slide_collision(index).get_collider()
 		if collider.is_in_group("jumping"):
 			velocity.y = JUMP_FORCE * 2
+		if collider.is_in_group("trough_way") and go_trough:
+			position.y += 10
+
+func _unhandled_input(event: InputEvent) -> void:
+	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_down") and is_on_floor():
-		position.y += 10
 	if event.is_action_pressed("ui_select"):
 		if is_on_floor() or (!is_on_floor() and can_doublejump):
 			velocity.y = JUMP_FORCE
@@ -38,15 +44,25 @@ func _physics_process(delta: float) -> void:
 			_animated_sprite.play("jump")
 	else:
 		velocity += get_gravity() * delta
-		var direction = Input.get_axis("ui_left", "ui_right")
-		velocity.x = direction * SPEED
+		direction = Input.get_axis("ui_left", "ui_right")
+		
+		if Input.is_action_just_pressed("ui_dash_key"):
+			velocity.x = direction * 10000
+		else:
+			velocity.x = direction * SPEED
+					
+		if Input.is_action_just_pressed("ui_down"):
+			go_trough = true
+		if Input.is_action_just_released("ui_down"):
+			go_trough = false
 		
 		move_and_slide()
 		check_collision()
 		update_animation(direction)
 
 func update_animation(direction):
-	_animated_sprite.flip_h = direction < 0
+	if direction != 0:
+		_animated_sprite.flip_h = direction < 0
 	if !is_on_floor():
 		_animated_sprite.play("jump")
 	elif direction == 0:

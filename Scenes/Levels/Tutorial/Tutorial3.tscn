@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_82ouk"]
 [ext_resource type="PackedScene" uid="uid://cxw716cf4pioo" path="res://Prefabs/Platforms/OneWayPlatform.tscn" id="9_8oyma"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pq15x"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trlm6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nooa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_246xn"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -36,9 +36,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq5m5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diacu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aq64d"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnj7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq5if"]
 content_margin_left = 4.0
@@ -105,8 +105,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pq15x")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2nooa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trlm6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
 disabled = true
 shortcut_feedback = false
@@ -131,8 +131,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_cq5m5")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2nooa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_diacu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
 disabled = true
 shortcut_feedback = false
@@ -160,10 +160,10 @@ position = Vector2(-300, 184)
 collision_layer = 1
 collision_mask = 1
 
-[node name="OneWayPlatform" parent="BaseNode2D" index="10" instance=ExtResource("9_8oyma")]
+[node name="OneWayPlatform" parent="BaseNode2D" index="10" groups=["trough_way"] instance=ExtResource("9_8oyma")]
 position = Vector2(224, -100)
 
-[node name="OneWayPlatform2" parent="BaseNode2D" index="11" instance=ExtResource("9_8oyma")]
+[node name="OneWayPlatform2" parent="BaseNode2D" index="11" groups=["trough_way"] instance=ExtResource("9_8oyma")]
 position = Vector2(-306, -8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BaseNode2D" index="12"]
@@ -188,8 +188,8 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_aq64d")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2nooa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jnj7i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dq5if")
 disabled = true
 button_mask = 4

@@ -34,7 +34,7 @@ position = Vector2(-358, 220)
 
 [node name="PlatformJump2" parent="BaseNode2D" index="4" instance=ExtResource("10_1esss")]
 z_index = -1
-position = Vector2(3945, 220)
+position = Vector2(4005, 220)
 
 [node name="PlatformJump" parent="BaseNode2D" index="5" instance=ExtResource("10_1esss")]
 position = Vector2(946, 616)
@@ -79,8 +79,8 @@ scale = Vector2(2, 2)
 
 [node name="WallOrFloor6" parent="BaseNode2D" index="12" instance=ExtResource("7_a8vkl")]
 modulate = Color(0.027451, 0.0313726, 0.0352941, 1)
-position = Vector2(3318, -318)
-scale = Vector2(1.2, 2)
+position = Vector2(3378, -318)
+scale = Vector2(1.4, 2)
 
 [node name="WallOrFloor7" parent="BaseNode2D" index="13" instance=ExtResource("7_a8vkl")]
 modulate = Color(0.027451, 0.0313726, 0.0352941, 1)
@@ -131,6 +131,5 @@ z_index = -1
 position = Vector2(2914, -442)
 scale = Vector2(2, 2)
 
-[node name="OneWayPlatform" parent="BaseNode2D" index="22" instance=ExtResource("12_mnasm")]
-position = Vector2(3945, -346)
-scale = Vector2(1.5, 1)
+[node name="OneWayPlatform" parent="BaseNode2D" index="22" groups=["trough_way"] instance=ExtResource("12_mnasm")]
+position = Vector2(4005, -346)
