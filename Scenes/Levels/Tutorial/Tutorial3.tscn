@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_82ouk"]
 [ext_resource type="PackedScene" uid="uid://cxw716cf4pioo" path="res://Prefabs/Platforms/OneWayPlatform.tscn" id="9_8oyma"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trlm6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hso5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_246xn"]
 content_margin_left = 4.0
@@ -36,9 +36,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_diacu"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0jjh"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnj7i"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh3oi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq5if"]
 content_margin_left = 4.0
@@ -59,7 +59,7 @@ visible = true
 position = Vector2(804, 408)
 
 [node name="Camera2D" type="Camera2D" parent="BaseNode2D" index="0"]
-position = Vector2(-16, 86)
+position = Vector2(8, 86)
 
 [node name="DeathZone" parent="BaseNode2D" index="1" instance=ExtResource("2_57f04")]
 position = Vector2(-4, 744)
@@ -105,7 +105,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_trlm6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hso5")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
 disabled = true
@@ -131,7 +131,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_diacu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p0jjh")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vj6kp")
 disabled = true
@@ -142,10 +142,10 @@ script = ExtResource("7_8bn0a")
 isActiveButton = null
 
 [node name="BaseLabel" type="Label" parent="BaseNode2D" index="8"]
-offset_left = -534.0
-offset_top = -100.0
-offset_right = -68.0
-offset_bottom = -39.0
+offset_left = -530.0
+offset_top = -96.0
+offset_right = -64.0
+offset_bottom = -35.0
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
 text = "Эту платформу
@@ -188,7 +188,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_25owd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jnj7i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sh3oi")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dq5if")
 disabled = true

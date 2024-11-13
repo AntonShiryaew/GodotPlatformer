@@ -37,10 +37,10 @@ position = Vector2(0, -336)
 position = Vector2(-932, -336)
 
 [node name="BaseLabel" type="Label" parent="BaseNode2D" index="6"]
-offset_left = -758.0
-offset_top = -582.0
-offset_right = -180.0
-offset_bottom = -521.0
+offset_left = -754.0
+offset_top = -330.0
+offset_right = -176.0
+offset_bottom = -269.0
 theme_override_fonts/font = ExtResource("9_yeuyr")
 theme_override_font_sizes/font_size = 30
 text = "Иногда, чтобы запустить процесс

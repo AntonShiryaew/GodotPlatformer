@@ -26,13 +26,13 @@ parentNode = NodePath("../..")
 [node name="layer_1" type="ParallaxLayer" parent="CanvasLayer/Background"]
 motion_mirroring = Vector2(440, 820)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
+[node name="layer_1_sprite" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
 modulate = Color(0.529067, 0.529067, 0.529067, 1)
 position = Vector2(240, 431)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_rla2g")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
+[node name="layer_1_sprite_1" type="Sprite2D" parent="CanvasLayer/Background/layer_1"]
 modulate = Color(0.529412, 0.529412, 0.529412, 1)
 position = Vector2(1120, 431)
 scale = Vector2(0.35, 0.35)
@@ -41,15 +41,15 @@ texture = ExtResource("4_rla2g")
 [node name="layer_2" type="ParallaxLayer" parent="CanvasLayer/Background"]
 motion_mirroring = Vector2(500, 820)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
+[node name="layer_2_sprite" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
 modulate = Color(0.804743, 0.804743, 0.804743, 1)
-position = Vector2(50, 450)
+position = Vector2(50, 420)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_rla2g")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
+[node name="layer_2_sprite_1" type="Sprite2D" parent="CanvasLayer/Background/layer_2"]
 modulate = Color(0.803922, 0.803922, 0.803922, 1)
-position = Vector2(1050, 450)
+position = Vector2(1050, 420)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_rla2g")
 

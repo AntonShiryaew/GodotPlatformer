@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Prefabs/BasicUi/baseButton.gd" id="7_a7pon"]
 [ext_resource type="PackedScene" uid="uid://dsedpm5rfdof1" path="res://Prefabs/bobot_pref.tscn" id="8_ari4k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u801d"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2tjg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_246xn"]
 content_margin_left = 4.0
@@ -35,9 +35,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lrks"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_287g8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahnx0"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rw837"]
 
 [node name="BaseNode" instance=ExtResource("1_s6p5h")]
 
@@ -93,7 +93,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_u801d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f2tjg")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
@@ -125,7 +125,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4lrks")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_287g8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
@@ -156,7 +156,7 @@ theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_hover_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = ExtResource("5_68ayb")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ahnx0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rw837")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_246xn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2m7et")
 disabled = true
